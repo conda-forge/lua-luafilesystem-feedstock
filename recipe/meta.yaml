@@ -11,20 +11,20 @@ source:
 
 build:
   detect_binary_files_with_prefix: true
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
   build:
     - gcc  # [linux]
     - llvm  # [osx]
-    - zlib
+    - zlib 1.2.*
     - luarocks
     - lua
 
   run:
     - libgcc  # [linux]
-    - zlib
+    - zlib 1.2.*
     - luarocks
     - lua
 
