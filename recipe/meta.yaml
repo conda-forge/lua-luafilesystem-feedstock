@@ -16,15 +16,12 @@ build:
 
 requirements:
   build:
-    - gcc  # [linux]
-    - llvm  # [osx]
+    - {{ compiler('c') }}
+  host:
     - zlib 1.2.*
     - luarocks
     - lua
-
   run:
-    - libgcc  # [linux]
-    - zlib 1.2.*
     - luarocks
     - lua
 
@@ -43,8 +40,6 @@ about:
        functions related to file systems offered by the standard Lua distribution.
        LuaFileSystem offers a portable way to access the underlying directory structure and file attributes.
        LuaFileSystem is free software and uses the same license as Lua 5.x (MIT).
-
-
 
 extra:
   recipe-maintainers:
