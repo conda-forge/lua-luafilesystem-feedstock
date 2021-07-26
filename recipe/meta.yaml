@@ -12,7 +12,8 @@ source:
 
 build:
   number: 0
-  skip: true  # [win]
+  ## osx lua build is broken, see https://github.com/conda-forge/lua-feedstock/pull/40
+  skip: true  # [not linux]
   rpaths:
     - lib/lua/5.4/
     - lib/
