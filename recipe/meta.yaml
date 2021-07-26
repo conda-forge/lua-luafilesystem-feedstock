@@ -1,32 +1,34 @@
 {% set name = "lua-luafilesystem" %}
-{% set version = "1.6.3" %}
-{% set sha256 = "d58439c548433adcda98e695be53e526ba940a4b9c44fb9a05d92cd495cdd47f" %}
+{% set version = "1.8.0" %}
+{% set sha256 = "16d17c788b8093f2047325343f5e9b74cccb1ea96001e45914a58bbae8932495" %}
 
 package:
   name: {{ name }} 
   version: {{version }}
 
 source:
-  git_url: git://github.com/keplerproject/luafilesystem
+  url: https://github.com/keplerproject/luafilesystem/archive/refs/tags/v1_8_0.tar.gz
 
 build:
-  detect_binary_files_with_prefix: true
-  number: 1
+  number: 0
   skip: true  # [win]
+  rpaths:
+    - lib/lua/5.4/
+    - lib/
 
 requirements:
   build:
-    - gcc  # [linux]
-    - llvm  # [osx]
-    - zlib 1.2.*
+    - {{ compiler('c') }}
+  host:
     - luarocks
-    - lua
-
-  run:
     - libgcc  # [linux]
-    - zlib 1.2.*
-    - luarocks
+    - zlib
     - lua
+  run:
+    - luarocks
+    - libgcc  # [linux]
+    - zlib
+    - lua    
 
 test:
   commands:
@@ -48,4 +50,5 @@ about:
 
 extra:
   recipe-maintainers:
-    - jerowe 
+    - jerowe
+    - izahn
