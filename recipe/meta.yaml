@@ -37,7 +37,7 @@ test:
 
 about:
   home: 'https://keplerproject.github.io/luafilesystem/'
-  license: MIT/X11
+  license: MIT
   license_family: MIT
   license_file: LICENSE 
   summary: 'File System Library for the Lua Programming Language'
