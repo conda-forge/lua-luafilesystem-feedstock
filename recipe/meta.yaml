@@ -8,6 +8,7 @@ package:
 
 source:
   url: https://github.com/keplerproject/luafilesystem/archive/refs/tags/v1_8_0.tar.gz
+  sha256: {{ sha256 }}
 
 build:
   number: 0
