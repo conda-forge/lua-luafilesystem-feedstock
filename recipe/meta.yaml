@@ -1,6 +1,5 @@
 {% set name = "lua-luafilesystem" %}
 {% set version = "1.8.0" %}
-{% set sha256 = "16d17c788b8093f2047325343f5e9b74cccb1ea96001e45914a58bbae8932495" %}
 
 package:
   name: {{ name }} 
@@ -8,7 +7,7 @@ package:
 
 source:
   url: https://github.com/keplerproject/luafilesystem/archive/refs/tags/v1_8_0.tar.gz
-  sha256: {{ sha256 }}
+  sha256: 16d17c788b8093f2047325343f5e9b74cccb1ea96001e45914a58bbae8932495
 
 build:
   number: 0
@@ -23,13 +22,10 @@ requirements:
     - {{ compiler('c') }}
   host:
     - luarocks
-    - libgcc  # [linux]
     - zlib
     - lua
   run:
     - luarocks
-    - libgcc  # [linux]
-    - zlib
     - lua    
 
 test:
@@ -47,8 +43,6 @@ about:
        functions related to file systems offered by the standard Lua distribution.
        LuaFileSystem offers a portable way to access the underlying directory structure and file attributes.
        LuaFileSystem is free software and uses the same license as Lua 5.x (MIT).
-
-
 
 extra:
   recipe-maintainers:
